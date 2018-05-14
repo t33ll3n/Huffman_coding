@@ -72,6 +72,8 @@ public class Huffman_coding {
 			//Print how many characters and bits have been read. Standard input file encoding is ANSI. Which uses 8 bits per character
 			System.out.println(charConuter + " characters encoded. Total number of bits: " + (charConuter * 8));
 			
+			printCharFreq(crke);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}    	
@@ -142,7 +144,7 @@ public class Huffman_coding {
         //create output file
         File file = new File("Compressed.txt");
         try {
-			fr = new FileReader("C:\\Users\\AaronStone\\workspace\\Huffman Coding\\bin\\input.txt");
+			fr = new FileReader("input.txt");
 			
 			br = new BufferedReader(fr);
 			
@@ -181,7 +183,15 @@ public class Huffman_coding {
         
     }
     
-   	//recursive function to build Huffman codes from tree
+   private static void printCharFreq(HashMap<Character, Integer> crke) {
+		
+	   for(char znak : crke.keySet()){
+		   System.out.println(znak + ": " + crke.get(znak));
+	   }
+		
+	}
+
+	//recursive function to build Huffman codes from tree
   	//String s represents the code.
       public static void buildCode(HuffmanNode root, String s)
       {
