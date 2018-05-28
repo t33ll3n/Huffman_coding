@@ -9,7 +9,7 @@ public class Source_generator {
 		//character that can appear in source with there probability
 		char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
 		//probability multiplied by 100 to avoid floating point errors
-		int[] charProb = {5, 10, 15, 18, 22, 30};
+		int[] charProb = {30, 20, 20, 15, 10, 5};
 		
 		//how much character should source produce
 		int numOfCharInSource = 300;
